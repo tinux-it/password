@@ -20,6 +20,8 @@ window.addEventListener("load", function() {
         charList += specialChars;
     }
 
+    document.getElementById("output-p").style.display = "flex";
+    document.getElementById("output-t").style.display = "flex";
     var pwLength = document.getElementById("lengthText").value;
     document.getElementById("output-p").innerHTML = "Generated password: <br>";
     document.getElementById("output-t").value = generatePW(pwLength, charList);
