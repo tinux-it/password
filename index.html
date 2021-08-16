@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS Password generator | Tom Emming</title>
+</head>
+<body>
+
+    <!-- Header --->
+    <section class="header text-center">
+        <h1 class="xl">Generate a secure password</h1>
+        <img src="images/password-removebg-preview.png" alt="">
+
+    </section>
+<div class="flex grid-1">
+    <div class="card text-center">
+        <form id='pw-gen-form'>
+            <div class="chboxl">Password Length:</div>
+            <div class="chboxr">
+                <input type="range" id='lengthSlider' class="slider" min='8' max='256' value='16'>
+                <input type="text" id="lengthText" required>
+            </div>
+            <div class='chboxl'>Lowercase</div>
+            <div class="chboxr">
+                <input type="checkbox" id='lowercase' checked>
+            </div>
+            <div class="chboxl">Uppercase</div>
+            <div class="chboxr">
+                <input type="checkbox" id='uppercase'>
+            </div>
+            <div class="chboxl">Numbers</div>
+            <div class="chboxr">
+                <input type="checkbox" id='numbers'>
+            </div>
+            <div class="chboxl">Special Characters</div>
+            <div class="chboxr">
+                <input type="checkbox" id='special'>
+            </div>
+            <div class="chboxl">
+                <button type="Submit">Generate!</button>
+            </div>
+            <div class="chboxr"></div>
+        </form>
+        <div class="chboxl">
+            <p id="output-p" class="output-p"></p>
+            <textarea rows="6" cols="50" id="output-t" class="output-t" disabled></textarea>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/script.js"></script>
+<script>
+    // Sliders
+var lengthSlider = document.getElementById("lengthSlider"); // The height slider
+var lengthText = document.getElementById("lengthText"); // The height output
+console.log(lengthSlider);
+
+lengthText.value = lengthSlider.value; // Set the default value height
+
+lengthText.oninput = function() {
+lengthSlider.value = this.value;
+}
+lengthSlider.oninput = function() {
+lengthText.value = this.value; // Set new output value after moving slider
+}
+</script>
+
+</body>
+</html>
