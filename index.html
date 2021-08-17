@@ -10,54 +10,62 @@
 </head>
 <body>
 
-    <!-- Header --->
-    <section class="header text-center">
-        <h1 class="xl">Generate a secure password</h1>
-        <img src="images/password-removebg-preview.png" alt="">
-
-    </section>
-<div class="flex grid-1">
-    <div class="card text-center">
-        <form id='pw-gen-form'>
-            <div class="chboxl">Password Length:</div>
-            <div class="chboxr">
-                <input type="range" id='lengthSlider' class="slider" min='8' max='256' value='16'>
-                <input type="text" id="lengthText" required>
-            </div>
-            <div class='chboxl'>Lowercase</div>
-            <div class="chboxr">
-                <input type="checkbox" id='lowercase' checked>
-            </div>
-            <div class="chboxl">Uppercase</div>
-            <div class="chboxr">
-                <input type="checkbox" id='uppercase'>
-            </div>
-            <div class="chboxl">Numbers</div>
-            <div class="chboxr">
-                <input type="checkbox" id='numbers'>
-            </div>
-            <div class="chboxl">Special Characters</div>
-            <div class="chboxr">
-                <input type="checkbox" id='special'>
-            </div>
-            <div class="chboxl">
-                <button type="Submit">Generate!</button>
-            </div>
-            <div class="chboxr"></div>
-        </form>
-        <div class="chboxl">
+    <section class="showcase">
+        <video class="backgroundVideo" src="videos/Password Background.mp4" muted loop autoplay ></video>
+        <div class="backgroundOverlay"></div>
+        <div class="card">
+            <h1>Generate a secure password</h1>
+            <form id="pw-gen-form">
+                <table>
+                    <tr>
+                        <td class="form-text">Length:</td>
+                        <td class="form-input">
+                            <input type="range" id='lengthSlider' class="slider" min='8' max='256' value='32'>
+                            <input type="text" class="lengthText" id="lengthText" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-text">Lowercase:</td>
+                        <td>
+                            <input class="form-checkbox" type="checkbox" id='lowercase' checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-text">Uppercase:</td>
+                        <td>
+                            <input class="form-checkbox" type="checkbox" id='uppercase'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-text">Numbers:</td>
+                        <td>
+                            <input class="form-checkbox" type="checkbox" id='numbers' checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-text">Special:</td>
+                        <td>
+                            <input class="form-checkbox" type="checkbox" id='special'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-button">
+                            <button type="Submit">Generate!</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
             <p id="output-p" class="output-p"></p>
-            <textarea rows="6" cols="50" id="output-t" class="output-t" disabled></textarea>
+            <input id="copyFrom" class="copyFrom" type="hidden">
+            <textarea rows="6" cols="60" id="output-t" class="output-t" disabled></textarea>
+            <button onclick="copyPw()" class="form-copy-button"  id="form-copy-button">Copy password</button>
         </div>
-    </div>
-</div>
-
+    </section>
 <script src="scripts/script.js"></script>
 <script>
-    // Sliders
+// Slider
 var lengthSlider = document.getElementById("lengthSlider"); // The height slider
 var lengthText = document.getElementById("lengthText"); // The height output
-console.log(lengthSlider);
 
 lengthText.value = lengthSlider.value; // Set the default value height
 

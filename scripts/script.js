@@ -22,9 +22,14 @@ window.addEventListener("load", function() {
 
     document.getElementById("output-p").style.display = "flex";
     document.getElementById("output-t").style.display = "flex";
+    document.getElementById("form-copy-button").style.display = "flex";
+
     var pwLength = document.getElementById("lengthText").value;
     document.getElementById("output-p").innerHTML = "Generated password: <br>";
     document.getElementById("output-t").value = generatePW(pwLength, charList);
+    document.getElementById("copyFrom").value = generatePW(pwLength, charList);
+
+
     })
   });
 
@@ -36,4 +41,12 @@ function generatePW(length, charList) {
     }
     return result;
 
+}
+
+function copyPw() {
+    var copyText = document.getElementById("copyFrom");
+    copyText.type = "text";
+    copyText.select();
+    document.execCommand("copy");
+    copyText.type = "hidden";
 }
