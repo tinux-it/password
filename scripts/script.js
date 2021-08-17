@@ -25,9 +25,10 @@ window.addEventListener("load", function() {
     document.getElementById("form-copy-button").style.display = "flex";
 
     var pwLength = document.getElementById("lengthText").value;
+    var generatedpW = generatePW(pwLength, charList);
     document.getElementById("output-p").innerHTML = "Generated password: <br>";
-    document.getElementById("output-t").value = generatePW(pwLength, charList);
-    document.getElementById("copyFrom").value = generatePW(pwLength, charList);
+    document.getElementById("output-t").value = generatedpW;
+    document.getElementById("copyFrom").value = generatedpW;
 
 
     })

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/style.css">
     <title>JS Password generator | Tom Emming</title>
 </head>
@@ -15,50 +14,60 @@
         <div class="backgroundOverlay"></div>
         <div class="card">
             <h1>Generate a secure password</h1>
-            <form id="pw-gen-form">
-                <table>
-                    <tr>
-                        <td class="form-text">Length:</td>
-                        <td class="form-input">
-                            <input type="range" id='lengthSlider' class="slider" min='8' max='256' value='32'>
-                            <input type="text" class="lengthText" id="lengthText" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text">Lowercase:</td>
-                        <td>
-                            <input class="form-checkbox" type="checkbox" id='lowercase' checked>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text">Uppercase:</td>
-                        <td>
-                            <input class="form-checkbox" type="checkbox" id='uppercase'>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text">Numbers:</td>
-                        <td>
-                            <input class="form-checkbox" type="checkbox" id='numbers' checked>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text">Special:</td>
-                        <td>
-                            <input class="form-checkbox" type="checkbox" id='special'>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-button">
-                            <button type="Submit">Generate!</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <p id="output-p" class="output-p"></p>
-            <input id="copyFrom" class="copyFrom" type="hidden">
-            <textarea rows="6" cols="60" id="output-t" class="output-t" disabled></textarea>
-            <button onclick="copyPw()" class="form-copy-button"  id="form-copy-button">Copy password</button>
+                <form id="pw-gen-form">
+                        <div class="grid">
+                            <div class="grid-1 form-text">Length:</div>
+                            <div class="grid -2form-input">
+                                <input type="range" id='lengthSlider' class="slider" min='8' max='256' value='32'>
+                                <input type="text" class="lengthText" id="lengthText" required>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="grid-3 form-text">Lowercase:</div>
+                            <div class="grid-4">
+                                <input class="form-checkbox" type="checkbox" id='lowercase' checked>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="grid-5 form-text">Uppercase:</div>
+                            <div class="grid-6">
+                                <input class="form-checkbox" type="checkbox" id='uppercase'>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="grid-7 form-text">Numbers:</div>
+                            <div class="grid-8">
+                                <input class="form-checkbox" type="checkbox" id='numbers' checked>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="grid-9 form-text">Special:</div>
+                            <div class="grid-10">
+                                <input class="form-checkbox" type="checkbox" id='special'>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="grid-11 form-button">
+                                <button type="Submit">Generate!</button>
+                            </div>
+                        </div>
+                </form>
+                <div class="grid">
+                    <div class="output-paragraph">
+                        <p id="output-p" class="output-p"></p>
+                    </div>
+                    <div class="div-copy">
+                        <input id="copyFrom" class="copyFrom" type="hidden">
+                    </div>
+                </div>
+                <div class="grid grid-output">
+                    <div class="output-text">
+                        <textarea rows="6" id="output-t" class="output-t" disabled></textarea>
+                    </div>
+                    <div class="output-btn">
+                        <button onclick="copyPw()" class="form-copy-button"  id="form-copy-button">Copy password</button>
+                    </div>
+                </div>
         </div>
     </section>
 <script src="scripts/script.js"></script>
