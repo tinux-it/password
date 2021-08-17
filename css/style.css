@@ -20,6 +20,13 @@ body {
     background-color: #333;
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
 .showcase {
     position: absolute;
     right: 0;
