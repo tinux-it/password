@@ -1,11 +1,8 @@
-name: Frontend CI/CD
+name: Test the build and package the container
 
 on:
   push:
-#    branches: main
-    branches: feature/setup-dockerfile
   pull_request:
-
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
