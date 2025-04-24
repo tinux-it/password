@@ -238,14 +238,6 @@ export default function Home() {
                 </div>
 
                 {/* Footer */}
-                <div className="px-5 py-3 bg-gray-900 border-t border-gray-700">
-                    <button
-                        className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                        onClick={generatePassword}
-                    >
-                        Generate New Password
-                    </button>
-                </div>
             </div>
 
             <div className="text-gray-500 text-xs mt-4">
