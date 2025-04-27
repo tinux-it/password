@@ -4,10 +4,16 @@ kind: Ingress
 metadata:
   name: password-generator-ingress
   namespace: password-generator
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls.certresolver: le
 spec:
-  ingressClassName: "traefik"
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - password.tomemming.nl
   rules:
-    - host: password.k8s.tinux-it.nl
+    - host: password.tomemming.nl
       http:
         paths:
           - path: /
