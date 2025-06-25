@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: password-generator
-  namespace: password-generator
+  namespace: tomemming
   labels:
     app: password-generator
 spec:
